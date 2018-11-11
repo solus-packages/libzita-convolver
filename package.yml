@@ -1,0 +1,18 @@
+name       : libzita-convolver
+version    : 4.0.3
+release    : 1
+source     :
+    - http://kokkinizita.linuxaudio.org/linuxaudio/downloads/zita-convolver-4.0.3.tar.bz2 : 9aa11484fb30b4e6ef00c8a3281eebcfad9221e3937b1beb5fe21b748d89325f
+license    : GPL-3.0-or-later
+component  : multimedia.library
+summary    : C++ library implementing a real-time convolution matrix.
+description: |
+    Zita convolver is a C++ library implementing a real-time convolution matrix for up to 64 inputs and outputs. It uses multiple partition sizes to provide both low delay and efficient CPU use.
+builddeps  :
+    - pkgconfig(fftw3)
+setup      : |
+    %patch -p1 < $pkgfiles/0001-remove-ldconfig.patch
+build      : |
+    %make PREFIX=%PREFIX% LIBDIR=%libdir% -C source/
+install    : |
+    %make_install PREFIX=%PREFIX% LIBDIR=%libdir% -C source/

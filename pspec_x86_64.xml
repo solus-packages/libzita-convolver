@@ -1,0 +1,49 @@
+<PISI>
+    <Source>
+        <Name>libzita-convolver</Name>
+        <Packager>
+            <Name>TeenCorn</Name>
+            <Email>TeenCorn@protonmail.com</Email>
+        </Packager>
+        <License>GPL-3.0-or-later</License>
+        <PartOf>multimedia.library</PartOf>
+        <Summary xml:lang="en">C++ library implementing a real-time convolution matrix.</Summary>
+        <Description xml:lang="en">Zita convolver is a C++ library implementing a real-time convolution matrix for up to 64 inputs and outputs. It uses multiple partition sizes to provide both low delay and efficient CPU use.
+</Description>
+        <Archive type="binary" sha1sum="79eb0752a961b8e0d15c77d298c97498fbc89c5a">https://solus-project.com/sources/README.Solus</Archive>
+    </Source>
+    <Package>
+        <Name>libzita-convolver</Name>
+        <Summary xml:lang="en">C++ library implementing a real-time convolution matrix.</Summary>
+        <Description xml:lang="en">Zita convolver is a C++ library implementing a real-time convolution matrix for up to 64 inputs and outputs. It uses multiple partition sizes to provide both low delay and efficient CPU use.
+</Description>
+        <PartOf>multimedia.library</PartOf>
+        <Files>
+            <Path fileType="library">/usr/lib64/libzita-convolver.so.4</Path>
+            <Path fileType="library">/usr/lib64/libzita-convolver.so.4.0.3</Path>
+        </Files>
+    </Package>
+    <Package>
+        <Name>libzita-convolver-devel</Name>
+        <Summary xml:lang="en">Development files for libzita-convolver</Summary>
+        <Description xml:lang="en">Zita convolver is a C++ library implementing a real-time convolution matrix for up to 64 inputs and outputs. It uses multiple partition sizes to provide both low delay and efficient CPU use.
+</Description>
+        <PartOf>programming.devel</PartOf>
+        <RuntimeDependencies>
+            <Dependency release="1">libzita-convolver</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="header">/usr/include/zita-convolver.h</Path>
+            <Path fileType="library">/usr/lib64/libzita-convolver.so</Path>
+        </Files>
+    </Package>
+    <History>
+        <Update release="1">
+            <Date>2018-10-30</Date>
+            <Version>4.0.3</Version>
+            <Comment>Packaging update</Comment>
+            <Name>TeenCorn</Name>
+            <Email>TeenCorn@protonmail.com</Email>
+        </Update>
+    </History>
+</PISI>

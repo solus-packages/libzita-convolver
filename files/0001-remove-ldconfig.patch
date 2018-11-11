@@ -1,0 +1,27 @@
+From afd01d4ab7326909225ae5f8742865ae57fed0d1 Mon Sep 17 00:00:00 2001
+From: TeenCorn <TeenCorn@protonmail.com>
+Date: Tue, 9 Oct 2018 17:27:18 -0700
+Subject: [PATCH] remove ldconfig
+
+---
+ source/Makefile | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/source/Makefile b/source/Makefile
+index 776c067..a99e067 100644
+--- a/source/Makefile
++++ b/source/Makefile
+@@ -56,8 +56,8 @@ install:	$(ZITA-CONVOLVER_MIN)
+ 	install -d $(DESTDIR)$(LIBDIR)
+ 	install -m 644 $(ZITA-CONVOLVER_H) $(DESTDIR)$(INCDIR)
+ 	install -m 755 $(ZITA-CONVOLVER_MIN) $(DESTDIR)$(LIBDIR)
+-	ldconfig
+-	ln -sf $(ZITA-CONVOLVER_MIN) $(DESTDIR)$(LIBDIR)/$(ZITA-CONVOLVER_SO)
++	ln -sv $(ZITA-CONVOLVER_MIN) $(DESTDIR)$(LIBDIR)/$(ZITA-CONVOLVER_SO)
++	ln -sv $(ZITA-CONVOLVER_MIN) $(DESTDIR)$(LIBDIR)/$(ZITA-CONVOLVER_MAJ)
+ 
+ uninstall:
+ 	rm -rf $(DESTDIR)$(INCDIR)/$(ZITA-CONVOLVER_H)
+-- 
+2.19.0
+
